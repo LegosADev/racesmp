@@ -1,0 +1,10 @@
+name: Races
+version: '1.0.0'
+main: com.julian.races.RacesPlugin
+api-version: '26.3'
+description: Random and craftable races with sneak + swap-hand abilities.
+author: Julian
+permissions:
+  races.admin:
+    description: Use /recipe, /race set, /race reroll and /race reload
+    default: op

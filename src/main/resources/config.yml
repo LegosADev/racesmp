@@ -1,0 +1,140 @@
+# ==================================================================
+#  Races - configuration
+#  After editing, run /race reload (or restart the server).
+# ==================================================================
+
+# Max health in hearts for each race (vanilla is 10 hearts).
+hearts:
+  brute: 13
+  piglin: 10
+  spider: 10
+  cat: 9
+  ender: 10
+  shulker: 10
+  guardian: 12
+  warden: 15
+  snowgolem: 10
+  skeleton: 8
+  zombie: 10
+  blazen: 11
+  elder_guardian: 12
+  witherborn: 12
+  elaryan: 13
+  dragon: 15
+
+# Ability cooldowns in seconds.
+cooldowns:
+  brute: 90
+  piglin: 45
+  spider: 60
+  cat: 25
+  nine_lives: 1800      # the Cat's 9 Lives totem (30 minutes)
+  ender: 45
+  shulker: 1
+  guardian_fatigue: 180 # Mining Fatigue IV aura
+  guardian_beam: 120    # chest laser
+  warden: 90
+  snowgolem: 60
+  skeleton: 45
+  zombie: 120
+  blazen: 90
+  elder_guardian: 60
+  witherborn: 45
+  elaryan: 15
+  dragon: 90
+
+# Crafted races. Operators can also toggle these in-game with /recipe.
+crafted-races:
+  elder_guardian:
+    enabled: true
+  witherborn:
+    enabled: true
+  elaryan:
+    enabled: true
+  dragon:
+    enabled: true
+
+# Cobweb carrying limits.
+cobwebs:
+  limit: 64          # every race except Spider
+  spider-limit: 128
+
+brute:
+  damage: 6.0        # 3 hearts
+  radius: 5.0
+
+piglin:
+  rolls-per-gold-block: 4
+  # chance is in percent. The listed chances add up to 99%, so 1% of rolls give nothing.
+  loot:
+    exp_bottles:     { item: experience_bottle,      amount: 8,  chance: 8 }
+    golden_apples:   { item: golden_apple,           amount: 4,  chance: 15 }
+    cobwebs:         { item: cobweb,                 amount: 8,  chance: 4 }
+    enchanted_apple: { item: enchanted_golden_apple, amount: 1,  chance: 0.5 }
+    ancient_debris:  { item: ancient_debris,         amount: 1,  chance: 1 }
+    breeze_rods:     { item: breeze_rod,             amount: 8,  chance: 4 }
+    chorus_fruit:    { item: chorus_fruit,           amount: 1,  chance: 2 }
+    golden_carrots:  { item: golden_carrot,          amount: 10, chance: 15 }
+    gold_ingots:     { item: gold_ingot,             amount: 4,  chance: 15 }
+    gold_block:      { item: gold_block,             amount: 1,  chance: 1.5 }
+    bone_meal:       { item: bone_meal,              amount: 16, chance: 8 }
+    warped_stems:    { item: warped_stem,            amount: 16, chance: 4 }
+    crimson_stems:   { item: crimson_stem,           amount: 16, chance: 8 }
+    crying_obsidian: { item: crying_obsidian,        amount: 8,  chance: 5 }
+    spectral_arrows: { item: spectral_arrow,         amount: 16, chance: 6 }
+    obsidian:        { item: obsidian,               amount: 2,  chance: 2 }
+
+spider:
+  poison-seconds: 5  # length of the Poison III from the ability
+
+ender:
+  teleport-distance: 10
+
+shulker:
+  keep-chance: 0.10        # chance each stored stack stays in the shulker storage on death
+  levitation-chance: 0.015 # 1.5% per hit
+
+guardian:
+  fatigue-radius: 20
+  beam-range: 20
+
+warden:
+  range: 15
+  damage: 8.0              # capped at 8 (4 hearts) no matter what
+  darkness-radius: 5
+  darkness-seconds: 10
+
+snowgolem:
+  freeze-seconds: 2
+  radius: 2
+
+skeleton:
+  bonus-damage: 4.0        # +2 hearts on the homing shot
+
+blazen:
+  damage: 6.0              # 3 hearts, ignores armor and Fire Resistance
+  length: 10
+
+witherborn:
+  bonus-damage: 4.0        # +2 hearts on the infused hit
+
+elaryan:
+  flight-duration: 5
+
+dragon:
+  damage: 8.0              # 4 hearts
+  radius: 3.5
+
+# Resource pack that gives the Cat's 9 Lives totem its cat texture.
+# The pack is always written to plugins/Races/races-pack.zip.
+#   mode: host -> the plugin serves the pack itself on 'port'. Set 'public-address' to the IP or
+#                 domain players use to join, and make sure that port is open.
+#   mode: url  -> upload races-pack.zip somewhere (e.g. a direct download link) and put it in 'url'.
+# Without the pack, 9 Lives still works; it just looks like a normal totem.
+resource-pack:
+  enabled: true
+  mode: host
+  public-address: ""
+  port: 8164
+  url: ""
+  required: false
